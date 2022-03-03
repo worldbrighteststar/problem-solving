@@ -1,5 +1,5 @@
 """
-1. answer : last crew - 1 or last bus
+1. Stack or Queue
 """
 def solution(n, t, m, timetable):
     timetable = sorted([change_time_form(time) for time in timetable], reverse=True)
@@ -19,6 +19,10 @@ def solution(n, t, m, timetable):
     return change_time_form(current_time) if num_of_person != m else change_time_form(last_passenger - 1)
 
 def change_time_form(time):
+    """
+    input : 'HH:MM' or minutes
+    output : minutes or 'HH:MM'
+    """
     if type(time) == str:
         h, m = map(int, time.split(':'))
         return h * 60 + m
