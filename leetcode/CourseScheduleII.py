@@ -22,7 +22,7 @@ class Solution(object):
             
             for next_course in graph[course]:
                 conditions[next_course] -= 1
-                if conditions[next_course] == 0:
+                if conditions[next_course] == 0: # next_course can be taken
                     Q.append(next_course)
         
         return answer if sum(conditions) == 0 else []
