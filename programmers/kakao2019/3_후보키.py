@@ -13,9 +13,9 @@ def solution(relation):
     def is_candidate_key(candidate):
         temp_candidate_key = []
         
-        for each in relation:
+        for each in relation: # each element [a, b, c, d]
             temp = []
-            for index in candidate:
+            for index in candidate: # target indexs of elements 
                 temp.append(each[index-1])
                 
             if temp in temp_candidate_key:
@@ -25,7 +25,7 @@ def solution(relation):
             
         return True
         
-    def delete_candidate_key(target):
+    def delete_candidate_key(target): # delete other candidate keys including the target
         for candidate in candidate_list[:]:
             if (target & candidate) == target:
                 candidate_list.remove(candidate)
