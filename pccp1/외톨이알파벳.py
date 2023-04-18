@@ -7,7 +7,7 @@ def solution(input_string):
     for alpha in input_string:
         if alpha != currentAlpha: # new alphabet group
             alphaInfo[alpha] += 1
-            currentAlpha = alpha # update current alphabet
+            currentAlpha = alpha # update current
     
     answer = [alpha for alpha in sorted(alphaInfo) if alphaInfo[alpha] > 1]
 
